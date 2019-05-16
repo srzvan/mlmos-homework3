@@ -93,7 +93,7 @@ services:
 ### 3.2 Gitlab
 * setare label pentru mașina care va hosta serviciul gitlab (e.g. gitlab.swarm) - `docker node update --label-add gitlab=true gitlab.swarm`
 * obținerea imaginii - `docker pull gitlab/gitlab-ce:latest` - executată pe mașina cu hostname-ul **gitlab.swarm**
-* setarea **SELINUX** la **permissive** pe mașina cu hostname-ul **gitlab.swarm** - `sed** -i 's/SELINUX=[a-z]*/SELINUX=permissive/g' /etc/selinux/config`
+* setarea **SELINUX** la **permissive** pe mașina cu hostname-ul **gitlab.swarm** - `sed -i 's/SELINUX=[a-z]*/SELINUX=permissive/g' /etc/selinux/config`
 * Crearea directoarelor necesare gitlab pe mașina cu hostname-ul **gitlab.swarm**
   * `mkdir -p /srv/gitlab/config`
   * `mkdir -p /srv/gitlab/logs`
