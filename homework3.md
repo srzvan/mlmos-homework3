@@ -43,6 +43,7 @@ Crearea a trei mașini virtuale, identificate prin hostname-urile **manager.swar
 * `docker swarm init --advertise-addr ip-adress-of-the-enp0s8-adapter-on-the-manager.swarm-machine` - pe mașina desemnată a fi **manager**
   * output-ul comenzii `docker swarm init` reprezintă comanda ce trebuie executată pe celelalte două mașini pentru a le adăuga în swarm
     * e.g. `docker swarm join --token very-long-token ip-of-enp0s8-adapter-on-the-manager.swarm-machine:2377`
+* oprirea firewall-ului pentru a putea adăuga celelate noduri - `systemctl stop firewalld`
 
 ### 2.2 Adăugarea celorlate noduri
 În cazul în care se pierde token-ul în terminalul pe care s-a executat `docker swarm init`, acesta poate fi aflat cu comanda `docker swarm join-token -q worker` (va returna **join token**-ul necesar pentru a adăuga un nod de tip **worker** în swarm).
